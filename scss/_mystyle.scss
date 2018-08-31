@@ -1,0 +1,60 @@
+@import '_flex.scss';
+
+.f-center{
+    @include flex-center;
+}
+
+.f-around{
+    @include flex-around;
+}
+.f-around-top{
+    @include flex-around-top;
+}
+.f-between{
+    @include flex-between;
+}
+
+.f-between-top{
+    @include flex-between-top;
+}
+
+.f-start{
+    @include flex-start;
+}
+
+.f-end{
+    @include flex-end;
+}
+
+.f-col-center{
+    @include flex-col-center;
+}
+
+.f-col-around{
+    @include flex-col-around;
+}
+
+.f-col-between{
+    @include flex-col-between;
+}
+
+.f-col-start{
+    @include flex-col-start;
+}
+
+.f-col-end{
+    @include flex-col-end;
+}
+
+.wrap{
+    @include wrap;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-center{
+    text-align: center;
+}
+

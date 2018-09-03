@@ -1,14 +1,5 @@
 $(document).ready(function(){
 
-  $('.schedule-btn').hover(function (e) { 
-    e.preventDefault();
-    link = $('.schedule-btn > img')
-    if(link.attr('src').includes("off")){
-      link.attr("src", link.attr('src').replace('_off','_on'));
-    }else{
-      link.attr("src", link.attr('src').replace('_on','_off'));
-    }
-  });
 
   $('#modal-theme').click(function (e) { 
     e.preventDefault();
@@ -17,17 +8,22 @@ $(document).ready(function(){
 
   $('.over-theme').click(function (e) { 
     e.preventDefault();
-    $('.over-theme').css('display', 'none');
+    $('.over-theme').fadeOut();
   });
 
   $('.pop_close_btn02').click(function (e) { 
     e.preventDefault();
-    $('.over-theme').css('display', 'none');
+    // $('.over-theme').fadeDown();
+    $('.over-theme').fadeOut();
   });
 
   $('.item a').click(function (e) { 
     e.preventDefault();
-    linkImg = $(this).children('img').attr('src')
+  });
+
+  $('.has-content').click(function (e) { 
+    e.preventDefault();
+    linkImg = $(this).attr('src')
     //set link img for modal
     // theme04_button01 --> theme04_images01-01
     theme1 = linkImg.replace('button','image')
@@ -36,6 +32,16 @@ $(document).ready(function(){
     theme2 = theme2.slice(0,linkImg.length-5)+'-02'+'.jpg'
     $('.theme-img1').attr('src' , theme1)
     $('.theme-img2').attr('src' , theme2)
-    $('.over-theme').css('display', 'block');
+    $('.over-theme').fadeIn()
   });
+
+  $('.hover-off-on').hover(function(e){
+    e.preventDefault();
+    getSrc = $(this).attr('src')
+    if (getSrc.includes('_off')){
+      $(this).attr('src' , getSrc.replace('_off', '_on'))
+    }else{
+      $(this).attr('src' , getSrc.replace('_on', '_off'))
+    }
+  })
 });
